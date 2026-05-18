@@ -1,0 +1,202 @@
+<!-- =========================
+FILE : index.html
+========================= -->
+<!DOCTYPE html> <!--deklarasi dokumen html-->
+<html lang="id"> <!--html bahasa indonesia -->
+<head> <!--kepala web-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sistem Data Mahasiswa</title> <!--judul kepala web-->
+
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header> <!--bagian atas halaman web-->
+
+        <h1>📚 Sistem Data Mahasiswa</h1>
+
+        <button id="themeToggleBtn" class="theme-btn">
+            🌙 Dark Mode
+        </button>
+
+    </header>
+
+    <!-- MAIN -->
+    <main class="container">
+
+        <!-- =========================
+        FORM SECTION
+        ========================= -->
+        <section class="card">
+
+            <h2 id="formTitle">Tambah Mahasiswa</h2>
+
+            <form id="studentForm">
+
+                <div class="form-group">
+                    <label>NIM</label>
+
+                    <input 
+                        type="text" 
+                        id="nim" 
+                        placeholder="Masukkan NIM"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+
+                    <input 
+                        type="text" 
+                        id="nama"
+                        placeholder="Masukkan nama lengkap"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Alamat</label>
+
+                    <textarea 
+                        id="alamat"
+                        placeholder="Masukkan alamat"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+
+                    <label>Jenis Kelamin</label>
+
+                    <div class="radio-group">
+
+                        <label>
+                            <input 
+                                type="radio" 
+                                name="gender"
+                                value="Laki-laki"
+                                checked
+                            >
+                            Laki-laki
+                        </label>
+
+                        <label>
+                            <input 
+                                type="radio"
+                                name="gender"
+                                value="Perempuan"
+                            >
+                            Perempuan
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <label>Password</label>
+
+                    <input 
+                        type="password"
+                        id="password"
+                        placeholder="Minimal 6 karakter"
+                        required
+                    >
+
+                </div>
+
+                <button 
+                    type="submit"
+                    class="btn primary"
+                    id="submitBtn"
+                >
+                    Simpan Data
+                </button>
+
+                <button 
+                    type="button"
+                    class="btn secondary hidden"
+                    id="cancelBtn"
+                >
+                    Batal
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- =========================
+        TABLE SECTION
+        ========================= -->
+        <section class="card">
+
+            <h2>Daftar Mahasiswa</h2>
+
+            <!-- SEARCH & FILTER -->
+            <div class="top-control">
+
+                <input 
+                    type="text"
+                    id="searchInput"
+                    placeholder="Cari nama atau NIM..."
+                >
+
+                <select id="filterGender">
+                    <option value="all">Semua</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+
+            </div>
+
+            <!-- TABLE -->
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Gender</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- PAGINATION -->
+            <div class="pagination" id="paginationContainer"></div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Sistem Data Mahasiswa</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/storage.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
